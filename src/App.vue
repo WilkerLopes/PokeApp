@@ -1,19 +1,11 @@
 <template>
-  <v-app>
-    <Pokemon />
-  </v-app>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/pokedex">About</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
-
-<script>
-import Pokemon from "./components/Pokemon";
-
-export default {
-  name: "App",
-
-  components: {
-    Pokemon,
-  },
-};
-</script>
 
 <style lang="scss"></style>
