@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="show" transition="dialog-bottom-transition" fullscreen>
+  <v-dialog :model="show" transition="dialog-bottom-transition" fullscreen>
     <v-card v-if="!load" class="fill-height">
       <v-card
         tile
