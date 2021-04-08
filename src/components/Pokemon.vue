@@ -4,12 +4,12 @@
       <v-container
         class="d-flex align-center justify-space-between flex-MD-column"
       >
-        <div class="display-1 font-weight-black text--primary ">PokeApp</div>
+        <div class="title font-weight-medium text--primary">PokeApp</div>
         <Search :apiUrl="apiUrl" @setPokemonUrl="setPokemonUrl" />
       </v-container>
     </v-app-bar>
 
-    <main class="pt-16">
+    <main class="pt-12">
       <v-container>
         <PokemonList
           :imageUrl="imageUrl"
@@ -38,7 +38,7 @@ export default {
   data: () => {
     return {
       imageUrl:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/",
       apiUrl: "https://pokeapi.co/api/v2/pokemon/",
       pokemonUrl: "",
       showDetail: false,

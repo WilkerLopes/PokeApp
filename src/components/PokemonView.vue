@@ -17,30 +17,36 @@
             elevation="0"
             height="56px"
           >
-            <v-btn @click="closeDetail" icon dark>
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
+            <v-container class="px-0">
+              <v-btn @click="closeDetail" icon dark>
+                <v-icon>mdi-arrow-left</v-icon>
+              </v-btn>
+            </v-container>
           </v-toolbar>
-          <v-container>
-            <div class="white--text d-flex align-center justify-space-between">
-              <div>
-                <div class="display-1 font-weight-bold text-capitalize">
-                  {{ pokemon.name }}
+
+          <div class="px-4">
+            <v-container>
+              <div
+                class="white--text d-flex align-center justify-space-between"
+              >
+                <div>
+                  <h1 class="display-1 font-weight-bold text-capitalize mb-1">
+                    {{ pokemon.name }}
+                  </h1>
+                  <v-chip
+                    class="mr-2 chip-type white--text"
+                    v-for="(value, index) in pokemon.types"
+                    :key="'value' + index"
+                  >
+                    {{ value.type.name }}
+                  </v-chip>
                 </div>
-                <v-chip
-                  class="mr-2"
-                  small
-                  v-for="(value, index) in pokemon.types"
-                  :key="'value' + index"
-                >
-                  {{ value.type.name }}</v-chip
-                >
+                <div class="font-font-weight-black subtitle-1">
+                  #{{ pokemon.id }}
+                </div>
               </div>
-              <div class="font-font-weight-black subtitle-1">
-                #{{ pokemon.id }}
-              </div>
-            </div>
-          </v-container>
+            </v-container>
+          </div>
         </div>
 
         <div>
@@ -55,104 +61,110 @@
           ></v-img>
 
           <v-card class="detail white">
-            <v-card-text class="pt-16">
-              <v-card
-                tile
-                elevation="0"
-                class=" mx-auto "
-                width="100%"
-                max-width="500px"
-              >
-                <v-tabs v-model="tab">
-                  <v-tab>
-                    <div class="subtitle-2 text-capitalize">Detalhes</div>
-                  </v-tab>
-                  <v-tab>
-                    <div class="subtitle-2 text-capitalize">Estatistícas</div>
-                  </v-tab>
-                </v-tabs>
+            <v-card-text class="pt-12">
+              <v-container>
+                <v-card tile elevation="0" class=" mx-auto " width="100%">
+                  <v-tabs v-model="tab">
+                    <v-tab>
+                      <div class="subtitle-2 text-capitalize">Detalhes</div>
+                    </v-tab>
+                    <v-tab>
+                      <div class="subtitle-2 text-capitalize">Estatistícas</div>
+                    </v-tab>
+                  </v-tabs>
 
-                <v-tabs-items v-model="tab" width="300px" class="mt-8">
-                  <v-tab-item>
-                    <v-row dense>
-                      <v-col
-                        cols="3"
-                        class="text--secondary grey--text caption"
-                      >
-                        Espécie
-                      </v-col>
-                      <v-col cols="9">
-                        {{ pokemon.species.name }}
-                      </v-col>
-                    </v-row>
-                    <v-row dense>
-                      <v-col
-                        cols="3"
-                        class="text--secondary grey--text caption"
-                      >
-                        Altura
-                      </v-col>
-                      <v-col cols="9">
-                        {{ pokemon.height / 10 + "cm" }}
-                      </v-col>
-                    </v-row>
-                    <v-row dense>
-                      <v-col
-                        cols="3"
-                        class="text--secondary grey--text caption"
-                      >
-                        Peso
-                      </v-col>
-                      <v-col cols="9">
-                        {{ pokemon.weight / 10 + "kg" }}
-                      </v-col>
-                    </v-row>
-                    <v-row dense>
-                      <v-col
-                        cols="3"
-                        class="text--secondary grey--text caption"
-                      >
-                        Ablidades
-                      </v-col>
-                      <v-col cols="9" class="d-flex ">
-                        <div
-                          v-for="(abilitie, index) in pokemon.abilities"
-                          :key="index"
+                  <v-tabs-items v-model="tab" width="300px" class="mt-8">
+                    <v-tab-item>
+                      <v-row dense>
+                        <v-col
+                          cols="4"
+                          md="3"
+                          class="text--secondary grey--text caption"
                         >
-                          {{ index != 0 ? ", " : "" }}
-                          {{ abilitie.ability.name }}
-                        </div>
-                      </v-col>
-                    </v-row>
-                  </v-tab-item>
+                          Espécie
+                        </v-col>
+                        <v-col cols="8" md="9">
+                          {{ pokemon.species.name }}
+                        </v-col>
+                      </v-row>
+                      <v-row dense>
+                        <v-col
+                          cols="4"
+                          md="3"
+                          class="text--secondary grey--text caption"
+                        >
+                          Altura
+                        </v-col>
+                        <v-col cols="8" md="9">
+                          {{
+                            100 > pokemon.height
+                              ? pokemon.height + " cm"
+                              : pokemon.height / 10 + " m"
+                          }}
+                        </v-col>
+                      </v-row>
+                      <v-row dense>
+                        <v-col
+                          cols="4"
+                          md="3"
+                          class="text--secondary grey--text caption"
+                        >
+                          Peso
+                        </v-col>
+                        <v-col cols="8" md="9">
+                          {{ pokemon.weight / 10 + "kg" }}
+                        </v-col>
+                      </v-row>
+                      <v-row dense>
+                        <v-col
+                          cols="4"
+                          md="3"
+                          class="text--secondary grey--text caption"
+                        >
+                          Ablidades
+                        </v-col>
+                        <v-col cols="8" md="9" class="d-flex ">
+                          <div
+                            v-for="(abilitie, index) in pokemon.abilities"
+                            :key="index"
+                          >
+                            {{ index != 0 ? ", " : "" }}
+                            {{ abilitie.ability.name }}
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-tab-item>
 
-                  <v-tab-item>
-                    <v-row
-                      dense
-                      v-for="(stat, index) in pokemon.stats"
-                      :key="index"
-                    >
-                      <v-col
-                        cols="3"
-                        class="text--secondary grey--text caption"
+                    <v-tab-item>
+                      <v-row
+                        dense
+                        v-for="(stat, index) in pokemon.stats"
+                        :key="index"
                       >
-                        {{ stat.stat.name }}
-                      </v-col>
-                      <v-col cols="9">
-                        <div class="font-weight-bold d-flex align-center">
-                          {{ stat.base_stat }}
+                        <v-col
+                          cols="4"
+                          md="3"
+                          class="text--secondary grey--text caption"
+                        >
+                          {{ stat.stat.name | capitalize }}
+                        </v-col>
+                        <v-col cols="8" md="9">
+                          <div class="font-weight-bold d-flex align-center">
+                            {{ stat.base_stat }}
 
-                          <v-progress-linear
-                            class="ml-4"
-                            v-model="stat.base_stat"
-                            :color="pokemon.types[0].type.name"
-                          ></v-progress-linear>
-                        </div>
-                      </v-col>
-                    </v-row>
-                  </v-tab-item>
-                </v-tabs-items>
-              </v-card>
+                            <v-progress-linear
+                              class="ml-4"
+                              v-model="stat.base_stat"
+                              :color="pokemon.types[0].type.name"
+                              rounded
+                            ></v-progress-linear>
+                          </div>
+                        </v-col>
+                      </v-row>
+                    </v-tab-item>
+                  </v-tabs-items>
+                </v-card>
+              </v-container>
             </v-card-text>
           </v-card>
         </div>
@@ -215,6 +227,19 @@ export default {
   created() {
     this.loadPokemon();
   },
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return (
+        value.charAt(0).toUpperCase() +
+        value
+          .slice(1)
+          .split("-")
+          .join(" ")
+      );
+    },
+  },
 };
 </script>
 
@@ -227,7 +252,23 @@ export default {
 .detail {
   z-index: 1;
   position: relative;
-  border-radius: 32px 32px 0 0 !important;
+  border-radius: 38px 38px 0 0 !important;
   margin-top: -64px !important;
+}
+.v-slide-group__content {
+  height: 38px;
+  .v-tabs-slider-wrapper {
+    height: 100% !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+  }
+  .v-tab {
+    position: relative !important;
+    z-index: 2 !important;
+    &.v-tab--active {
+      transition: color 0.35s;
+      color: var(--v-white) !important;
+    }
+  }
 }
 </style>

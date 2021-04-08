@@ -1,7 +1,4 @@
-html,
-body {
-  font-family: "Lexend", sans-serif !important;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&display=swap");
 
 .box-scroll {
   overflow-y: auto;
@@ -9,13 +6,13 @@ body {
 }
 
 .bg-grass {
-  background-color: #78c850 !important;
+  background-color: #48d0b0 !important;
 }
 .bg-fire {
-  background-color: #f08030 !important;
+  background-color: #fb6c6c !important;
 }
 .bg-water {
-  background-color: #6890f0 !important;
+  background-color: #73bafc !important;
 }
 .bg-bug {
   background-color: #a8b820 !important;
@@ -27,7 +24,7 @@ body {
   background-color: #a040a0 !important;
 }
 .bg-electric {
-  background-color: #f8d030 !important;
+  background-color: #ffce4b !important;
 }
 .bg-ground {
   background-color: #e0c068 !important;
@@ -61,4 +58,9 @@ body {
 }
 .bg-steel {
   background-color: #7a8d89 !important;
+}
+// chip
+
+.chip-type {
+  background-color: #fafaff30 !important;
 }

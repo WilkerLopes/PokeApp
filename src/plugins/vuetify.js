@@ -5,14 +5,17 @@ Vue.use(Vuetify);
 
 const Theme = {
   primary: "#008ce3",
-  grass: "#78c850",
-  fire: "#f08030",
-  water: "#6890f0",
+  background: "#f9f9fa",
+  white: "#f9f9fa",
+  // pokemons classes
+  grass: "#48D0B0",
+  fire: "#FB6C6C",
+  water: "#73BAFC",
   normal: "#a8a878",
   flying: "#5db8b1",
   bug: "#a8b820",
   poison: "#a040a0",
-  electric: "#f8d030",
+  electric: "#FFCE4B",
   ground: "#e0c068",
   fighting: "#c03028",
   psychic: "#f85888",
@@ -26,10 +29,14 @@ const Theme = {
 };
 
 export default new Vuetify({
-  customVariables: ["./vuetify.scss"],
+  customVariables: ["./custon.scss"],
   theme: {
     themes: {
       light: Theme,
     },
+  },
+  treeShake: true,
+  options: {
+    customProperties: true,
   },
 });
