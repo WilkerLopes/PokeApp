@@ -1,4 +1,4 @@
 module.exports = {
   transpileDependencies: ["vuetify"],
-  publicPath: "/PokeApp/",
+  publicPath: process.env.NODE_ENV === "production" ? "/PokeApp/" : "/",
 };

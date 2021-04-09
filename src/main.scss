@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&display=swap");
 
-.box-scroll {
-  overflow-y: auto;
-  max-height: 100vh;
+html {
+  overflow: hidden !important;
+}
+
+.v-app-bar-title__content {
+  width: fit-content !important;
 }
 
 .bg-grass {
@@ -59,8 +62,108 @@
 .bg-steel {
   background-color: #7a8d89 !important;
 }
+
+.sh-grass {
+  box-shadow: 0px 12px 15px -5px #48d0b080 !important;
+}
+.sh-fire {
+  box-shadow: 0px 12px 15px -5px #fb6c6c80 !important;
+}
+.sh-water {
+  box-shadow: 0px 12px 15px -5px #73bafc80 !important;
+}
+.sh-bug {
+  box-shadow: 0px 12px 15px -5px #a8b82080 !important;
+}
+.sh-normal {
+  box-shadow: 0px 12px 15px -5px #a8a87880 !important;
+}
+.sh-poison {
+  box-shadow: 0px 12px 15px -5px #a040a080 !important;
+}
+.sh-electric {
+  box-shadow: 0px 12px 15px -5px #ffce4b80 !important;
+}
+.sh-ground {
+  box-shadow: 0px 12px 15px -5px #e0c06880 !important;
+}
+.sh-fairy {
+  box-shadow: 0px 12px 15px -5px #ee99ac80 !important;
+}
+.sh-fighting {
+  box-shadow: 0px 12px 15px -5px #c0302880 !important;
+}
+.sh-psychic {
+  box-shadow: 0px 12px 15px -5px #f8588880 !important;
+}
+.sh-rock {
+  box-shadow: 0px 12px 15px -5px #b8a03880 !important;
+}
+.sh-ghost {
+  box-shadow: 0px 12px 15px -5px #70589880 !important;
+}
+.sh-ice {
+  box-shadow: 0px 12px 15px -5px #98d8d880 !important;
+}
+.sh-dragon {
+  box-shadow: 0px 12px 15px -5px #7038f880 !important;
+}
+.sh-dark {
+  box-shadow: 0px 12px 15px -5px #5e453180 !important;
+}
+.sh-flying {
+  box-shadow: 0px 12px 15px -5px #5db8b180 !important;
+}
+.sh-steel {
+  box-shadow: 0px 12px 15px -5px #7a8d8980 !important;
+}
 // chip
 
 .chip-type {
   background-color: #fafaff30 !important;
+}
+//page
+.pokeball-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(35%, -30%);
+  filter: invert(1);
+  opacity: 0.15;
+  max-width: max(70%, 300px);
+  z-index: 1 !important;
+}
+.front-image {
+  position: relative;
+  z-index: 2 !important;
+}
+
+// scroll
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border: none;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #c2c2c2;
+}
+::-webkit-scrollbar-track {
+  background: #eee;
+  border: none;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

@@ -9,7 +9,7 @@
         :key="index"
       >
         <v-card
-          class="rounded-lg"
+          class="rounded-lg card-item"
           width="100%"
           height="100%"
           elevation="3"
@@ -30,7 +30,7 @@
               </div>
             </div>
             <v-img
-              lazy-src="@/assets/load.gif"
+              lazy-src="/assets/load.gif"
               height="84"
               width="84"
               max-width="50%"

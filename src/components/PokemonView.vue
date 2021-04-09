@@ -1,5 +1,10 @@
 <template>
-  <v-dialog v-model="show" transition="dialog-bottom-transition" fullscreen>
+  <v-dialog
+    v-model="show"
+    transition="scale-transition"
+    origin="center center"
+    fullscreen
+  >
     <v-card v-if="!load" class="fill-height">
       <v-card
         tile
@@ -51,7 +56,7 @@
 
         <div>
           <v-img
-            lazy-src="@/assets/load.gif"
+            lazy-src="/assets/load.gif"
             width="75vw"
             height="75vw"
             max-height="300px"
