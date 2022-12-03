@@ -1,6 +1,6 @@
 # PokeApp
 
-Este aplicativo foi desenvolvido usando vue.js, feito para mostra dados dos pokemons usando p PokeAPI. Para usar em seu local de trabalho siga os passos abaixo após clonar o repositório. Caso deseje ver o site sem clonar, pode acessar https://poke-app-seven-flax.vercel.app.
+Este aplicativo foi desenvolvido usando vue.js, feito para mostra dados dos pokemons usando p PokeAPI. Para usar em seu local de trabalho siga os passos abaixo após clonar o repositório. Caso deseje ver o site sem clonar, pode acessar https://poke-app-wilkerlopes.vercel.app.
 
 ## Configurando o projeto
 
